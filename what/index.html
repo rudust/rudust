@@ -213,21 +213,23 @@ footer{
 
 <script>
 
-// Случайный заголовок вкладки
 const titles = [
     "rudust",
+    "",
+    "dustru",
     "poopie website",
-    "certified arch user",
-    "i use arch btw",
-    "doors is peak",
-    "bello"
+    "wuh!",
+    "gfasdoczhwe",
+    "kaboom",
+    "who ar u",
+    "bocchi the rock is so peak",
+    "vibecode simulator"
 ];
 
 document.title =
     titles[Math.floor(Math.random() * titles.length)];
 
 
-// Случайное приветствие
 const greetings = [
     "bello",
     "haii",
@@ -241,24 +243,12 @@ document.querySelector("header h1").textContent =
     greetings[Math.floor(Math.random() * greetings.length)];
 
 
-// Случайные аватарки
-const avatars = [
-    "https://i.pinimg.com/736x/ca/8f/7e/ca8f7ec3216be86d21d25b76dc9d6932.jpg",
-
-    "https://i.pinimg.com/736x/34/70/2d/34702d0de694636f2013f308f0936f34.jpg",
-
-    "https://i.pinimg.com/736x/c8/12/2e/c8122e45a04192a747b9ec9aa902dab9.jpg",
-
-    "https://i.pinimg.com/736x/b5/ba/d8/b5bad8852083171d8e3d5bcd35e4d77c.jpg"
-];
 
 window.onload = () => {
 
-    // случайная аватарка
     document.querySelector(".avatar").src =
         avatars[Math.floor(Math.random() * avatars.length)];
 
-    // случайный цвет фона
     const gradients = [
         "linear-gradient(135deg,#74b9ff,#a29bfe)",
         "linear-gradient(135deg,#ff7675,#fd79a8)",
@@ -272,7 +262,6 @@ window.onload = () => {
 };
 
 
-// Случайные факты
 function showFact() {
 
     const facts = [
