@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,7 @@ header{
     text-align:center;
     padding:80px 20px;
     color:white;
+    position:relative;
 }
 
 header h1{
@@ -112,15 +113,46 @@ footer{
     color:white;
     padding:40px;
 }
+
+.lang-switch{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:100;
+    display:flex;
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(6px);
+    border-radius:30px;
+    padding:4px;
+}
+
+.lang-switch button{
+    padding:8px 16px;
+    border-radius:24px;
+    background:transparent;
+    color:white;
+    font-size:0.9rem;
+    font-weight:bold;
+    box-shadow:none;
+}
+
+.lang-switch button.active{
+    background:#6c5ce7;
+}
 </style>
 </head>
 
 <body>
 
+<div class="lang-switch">
+    <button id="btnRu" onclick="setLang('ru')">RU</button>
+    <button id="btnEn" class="active" onclick="setLang('en')">EN</button>
+</div>
+
 <header>
-    <h1>bello</h1>
-    <p>names rudust uhh</p>
-    <h6>poop</h6>
+    <h1 id="greeting">bello</h1>
+    <p data-ru="зовут рудаст (он/его, несовершеннолетний)" data-en="names rudust uhh (he/him, minor)">names rudust uhh (he/him, minor)</p>
+    <h6 data-ru="какашки" data-en="poop">poop</h6>
 </header>
 
 <section>
@@ -132,55 +164,37 @@ footer{
     alt="avatar">
 
         <div>
-            <h2>abt this site</h2>
+            <h2 data-ru="об этом сайте" data-en="abt this site">abt this site</h2>
             <br>
-            <p>
-              i made it at 2 am bcuz i was so bored
+            <p data-ru="я сделал этот сайт в 2 часа ночи, потому что мне было скучно" data-en="i made this website at 2 am bcuz i was too bored">
+              i made this website at 2 am bcuz i was too bored
             </p>
 
             <br>
 
-            <p>
+            <p data-ru="спасибо гитхабу за бесплатный хостинг" data-en="thanks to github for giving me free host">
               thanks to github for giving me free host 
             </p>
 
             <br>
 
             <p>
-                result of very hard work of <s>ChatGpt</s> rudust (me!!)
+                <span data-ru="результат очень тяжёлого труда" data-en="result of very hard work of">result of very hard work of</span> <s>ChatGpt</s> <span data-ru="рудаста (это я!!)" data-en="rudust (me!!)">rudust (me!!)</span>
+            </p>
 
+            <br>
+
+            <p data-ru="не думаю, что это какое-либо портфолио
+            максимум, я могу быть переводчиком для маленькой игры с английского на русский (без реального опыта :P)" data-en="don't think that this is some kind of portfolio
+            maybe i can be a translator for your small game to translate from english to russian (no experience :P)">
+            i don't think that this is some kind of portfolio
+            maybe i can be a translator for your small game to translate from english to russian (no experience :P)
             </p>
         </div>
-        
     </div>
-     <div class="card">
-        <h2>abt me</h2>
-        
-        <br>
 
-        <p>lwk listen to music 24/7</p>
-        <br>
-        <p>started making roblox games in 2023</p>
-        <p>and abandoned ts in 2026 bcuz of updates</p>
-     </div>
-    <div class="card">
-        <h2>my wall</h2>
-        <br>
-        <p>06.13.26 - collected all 700 teensies in rayman legends, so basically i beat rayman legends 100%</p>
-        <p>06.07.26 - just watched among us series. its lwk cool </p>
-        <p>06.05.26 - trying to beat rayman legends 100% </p>
-        <p>06.02.26 - i launched this website!! </p>
-        
-    </div>
-   <div class="card">
-        <h2>best buddie(s)</h2>
-        <br>
-
-        <p><a href="https://maxbun333.straw.page/">maxbun</a></p>
-        
-    </div>
-    <div class="card">
-        <h2>interesting facts</h2>
+    <div class="card about">
+        <h2 data-ru="интересные факты" data-en="interesting facts">interesting facts</h2>
         <br>
 
         <button onclick="showFact()">
@@ -190,11 +204,49 @@ footer{
         <div id="fact"></div>
     </div>
 
-    <div class="card">
-        <h2>my playlist</h2>
+    </div>
+
+      <div class="card">
+        <h2 data-ru="любимая игра" data-en="favourite game">favourite game</h2>
         <br>
 
-        <h4>lwk cool!</h4>
+        <h4 data-ru="вау. первая часть не сильна наполнена сюжетом,
+         но вторая разбрасывается разными плот твистами как никакая другая игра.
+         очень приятно проходить все головоломки, с такой прикольной механикой
+         как портальная пушка.
+
+         и давайте признаемся, почти все пользовались туториалами на ютубе, 
+         для прохождения игры" 
+         data-en="wow. first portal isn't filled with much lore,
+         but the second one features such an incredible plot twists like no other game.
+         it's so satisfying to solve all the cameras, with such a cool mechanic
+         like a portal gun">wow. first portal isn't filled with much lore,
+         but the second one features such an incredible plot twists like no other game.
+         it's so satisfying to solve all the cameras, with such a cool mechanic
+         as a portal gun</h4>
+        <br>
+
+    <iframe src="https://store.steampowered.com/widget/620/"
+    frameborder="0"
+     width="646" 
+     height="190">
+    </iframe>
+
+    </div>
+
+   <div class="card about">
+        <h2 data-ru="лучшие друзья" data-en="best buddies">best buddies</h2>
+        <br>
+
+        <p><a href="https://maxbun333.straw.page/" data-ru="maxbun" data-en="maxbun">maxbun</a></p>
+        
+    </div>
+
+    <div class="card">
+        <h2 data-ru="мой плейлист" data-en="my playlist">my playlist</h2>
+        <br>
+
+        <h4 data-ru="хз мне нравится" data-en="lwk cool!">lwk cool!</h4>
         <br>
 
          <iframe
@@ -209,23 +261,25 @@ footer{
 
     </div>
 
-    <div class="card">
-        <h2>contacts</h2>
+    <div class="card about">
+        <h2 data-ru="контакты" data-en="contacts">contacts</h2>
         <br>
 
-        <p>youtube: <a href="https://www.youtube.com/@rudust_1">here</a></p>
-        <p>steam: <a href="https://steamcommunity.com/id/rudust_/">here</a></p>
-        <p>X: <a href="https://x.com/rudust01">here</a>
+        <p>youtube: <a href="https://www.youtube.com/@rudust_1" data-ru="здесь" data-en="here">here</a></p>
+        <p>steam: <a href="https://steamcommunity.com/id/rudust_/" data-ru="здесь" data-en="here">here</a></p>
+        <p>X: <a href="https://x.com/rudust01" data-ru="здесь" data-en="here">here</a></p>
           
     </div>
+ <div>
 
-</section>
 
-<footer>
+<footer data-ru="попа жопа ахахаахахахах" data-en="None of your data is reserved, I ate it all">
     None of your data is reserved, I ate it all
 </footer>
 
 <script>
+
+let currentLang = 'en';
 
 const titles = [
     "rudust",
@@ -243,7 +297,7 @@ document.title =
     titles[Math.floor(Math.random() * titles.length)];
 
 
-const greetings = [
+const greetingsEn = [
     "bello",
     "haii",
     "welcome",
@@ -252,22 +306,34 @@ const greetings = [
     "hello there"
 ];
 
-document.querySelector("header h1").textContent =
-    greetings[Math.floor(Math.random() * greetings.length)];
+const greetingsRu = [
+    "привет",
+    "пр",
+    "добро пожаловать",
+    "здарова",
+    "привет здоровяк🤣🤣🤣🤣",
+    "приве"
+];
 
+function pickGreeting(){
+    const list = currentLang === 'ru' ? greetingsRu : greetingsEn;
+    document.getElementById("greeting").textContent =
+        list[Math.floor(Math.random() * list.length)];
+}
+
+pickGreeting();
 
 
 window.onload = () => {
 
-    document.querySelector(".avatar").src =
-        avatars[Math.floor(Math.random() * avatars.length)];
+    if (typeof avatars !== "undefined") {
+        document.querySelector(".avatar").src =
+            avatars[Math.floor(Math.random() * avatars.length)];
+    }
 
     const gradients = [
         "linear-gradient(135deg,#74b9ff,#a29bfe)",
-        "linear-gradient(135deg,#ff7675,#fd79a8)",
-        "linear-gradient(135deg,#55efc4,#81ecec)",
-        "linear-gradient(135deg,#ffeaa7,#fab1a0)",
-        "linear-gradient(135deg,#6c5ce7,#00cec9)"
+
     ];
 
     document.body.style.background =
@@ -275,44 +341,101 @@ window.onload = () => {
 };
 
 
+const factsEn = [
+    "poopie doopie.",
+    "i love tally hall.",
+    "my roblox game got 1 mil visits.",
+    "i forgor.",
+    "i love pizza.",
+    "i used to be a roblox game developer.",
+    "doors is peak.",
+    "i probably listen to too much music.",
+    "i once spent hours fixing a bug caused by one character.",
+    "i use arch btw.",
+    "what",
+    "how does this thing work",
+    "i live in belarus",
+    "PEAK is actually peak",
+    "i remember playing gd 24/7 on summer 2024",
+    "my hardest is nine circles!",
+    "i love my playlist so much",
+    "sorry for my bad english",
+    "fun fact",
+    "im such a horrible dev",
+    "my very first game on roblox is Just a box",
+    "i remember playing forsaken in 2025",
+    "i love portal very much",
+    "i wrote ts on 06.03.2025, 20:32",
+    "rayman legends and portal 2 are the best game ever created",
+    "my favourite album of all time is Hawaii: Pt II",
+    "my first big roblox game is Bloxy Adventure and it's so bad",
+    "before rudust there was RubyGD",
+    "did u know that",
+    "this code is being written in visual studio code"
+];
+
+const factsRu = [
+    "жопа пися.",
+    "я люблю талли холл.",
+    "моя игра в роблоксе набрала 1 млн визитов.",
+    "че.",
+    "я люблю пиццу.",
+    "раньше я был разработчиком игр в роблоксе.",
+    "дорс очень крутая игра.",
+    "наверное, слушаю слишком много музыки.",
+    "однажды я часами чинил баг из-за одного символа.",
+    "фу боже, он линукс юзер.",
+    "😂😂😂😂😂😂",
+    "как эта штука работает",
+    "я живу в беларуси",
+    "PEAK реально PEAK",
+    "помню как играл в гд 24/7 летом 2024",
+    "мой хардест nine circles!",
+    "я очень люблю свой плейлист",
+    "прабачце за мой дрэнны англiйскi",
+    "забавный факт",
+    "я такой ужасный разработчик",
+    "моя самая первая игра на роблоксе - просто коробка",
+    "помню как играл в форсейкен в 2025",
+    "я очень люблю серию игр Portsl",
+    "я писал это 06.03.2025, 20:32",
+    "rayman legends и portal 2 лучшие игры из когда-либо созданных",
+    "мой любимый альбом - Hawaii: Pt II",
+    "моя первая большая игра в роблоксе — Bloxy Adventure, и она такая дерьмовая",
+    "до рудаста был РубиГД",
+    "а вы знали, что",
+    "этот код пишется в visual studio code",
+    "этот текст есть только на русском языке😈😈😈"
+];
+
 function showFact() {
 
-    const facts = [
-        "poopie doopie.",
-        "i love tally hall.",
-        "my roblox game got 1 mil visits.",
-        "i forgor.",
-        "i love pizza.",
-        "i used to be a roblox game developer.",
-        "doors is peak.",
-        "i probably listen to too much music.",
-        "i once spent hours fixing a bug caused by one character.",
-        "i use arch btw.",
-        "what",
-        "how does this thing work",
-        "i live in belarus",
-        "PEAK is actually peak",
-        "i remember playing gd 24/7 on summer 2024",
-        "my hardest is nine circles!",
-        "i love my playlist so much",
-        "прабачце за мой дрэнны англiйскi",
-        "fun fact",
-        "im such a horrible dev",
-        "my very first game on roblox is Just a box",
-        "i remember playing forsaken in 2025",
-        "i love portal very much",
-        "i wrote ts on 06.03.2025, 20:32",
-        "rayman legends is the best game ever created",
-        "my favourite album of all time is Hawaii: Pt II",
-        "my first big roblox game is Bloxy Adventure and it's so bad",
-        "before rudust there was RubyGD"
-
-    ];
+    const facts = currentLang === 'ru' ? factsRu : factsEn;
 
     const random =
         facts[Math.floor(Math.random() * facts.length)];
 
     document.getElementById("fact").innerText = random;
+}
+
+function setLang(lang){
+    currentLang = lang;
+
+    document.getElementById("btnRu").classList.toggle("active", lang === 'ru');
+    document.getElementById("btnEn").classList.toggle("active", lang === 'en');
+
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-ru][data-en]").forEach(el => {
+        el.textContent = lang === 'ru' ? el.getAttribute('data-ru') : el.getAttribute('data-en');
+    });
+
+    pickGreeting();
+
+
+    if (document.getElementById("fact").innerText.trim() !== "") {
+        showFact();
+    }
 }
 
 </script>
